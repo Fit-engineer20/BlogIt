@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React,{useState} from "react";
 import './App.css';
+import {Switch, Route} from "react-router-dom";
+import Home from "./components/home/Home";
+import NewPost from "./components/newpost/NewPost";
+import Data from "./constants/Data";
+import Blogpage from "./components/Blogpage";
+import Edit from "./components/editblog/Edit";
 
 function App() {
+
+  const [array, setArray] = useState(Data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path='/' component={() => (<Home array={array} setArray={setArray}/>)} />
+        <Route exact path='/newpost' component = {() => (<NewPost array={array} setArray={setArray}/>)} />
+        <Route exact path='/editpost' component = {() => (<Edit array={array} setArray={setArray}/>)} />
+        <Route exact path='/:title' component={() => (<Blogpage array={array} setArray={setArray}/>)} />
+      </Switch>
     </div>
   );
 }
