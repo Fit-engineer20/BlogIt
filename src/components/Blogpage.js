@@ -76,7 +76,7 @@ const Blogpage = ({array, setArray}) => {
             {content.content}
         </Description>
         <Buttondiv>
-            <Button onClick={hanndleedit}>Edit Blog</Button>
+            <Button backgroundColor="rgb(85, 41, 220)" onClick={hanndleedit}>Edit Blog</Button>
             <Button onClick={handledelete}>Delete Blog</Button>
         </Buttondiv>
     </Container>

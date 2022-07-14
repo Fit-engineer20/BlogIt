@@ -65,7 +65,7 @@ const NewPost = ({array, setArray}) => {
             <Lable>Description</Lable>
             <Input type="text" onChange={handlecontent} value={content.content} placeholder="Description here"></Input>
         </Boxdiv>
-        <Button onClick={Createnew}>Submit</Button>
+        <Button backgroundColor="rgb(85, 41, 220)" onClick={Createnew}>Submit</Button>
     </Container>
   )
 }

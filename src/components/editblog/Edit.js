@@ -75,7 +75,7 @@ const EditPost = ({array, setArray}) => {
             <Lable>Description</Lable>
             <Input type="text" onChange={handlecontent} value={content.content} placeholder="Description here"></Input>
         </Boxdiv>
-        <Button onClick={Createnew}>Confirm Edit</Button>
+        <Button backgroundColor="rgb(85, 41, 220)" onClick={Createnew}>Confirm Edit</Button>
     </Container>
   )
 }

@@ -6,7 +6,7 @@ const ButtonComponent = styled.button`
     font-weight: 600;
     padding: 0.5em 1.5em;
     color: white;
-    background: black;
+    background: ${(props) => props.backgroundColor || "black"};
     border-radius: 4px;
     border: 2px solid black;
     cursor: pointer;
