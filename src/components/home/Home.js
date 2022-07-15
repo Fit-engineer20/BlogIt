@@ -32,6 +32,7 @@ padding:5%;
 padding-right:8%;
 padding-bottom:3%;
 background: rgb(85, 41, 220);
+margin-bottom:50px;
 `
 
 const Home = ({array,setArray}) => {

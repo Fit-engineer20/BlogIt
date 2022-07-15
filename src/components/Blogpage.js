@@ -11,6 +11,7 @@ import { faPenToSquare, faTrashCan, faHeart } from '@fortawesome/free-regular-sv
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    margin-bottom:50px;
     `
     const Title = styled.div`
     font-size:56px;
