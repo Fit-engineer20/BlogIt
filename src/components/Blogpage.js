@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from "styled-components";
 import Button from "../components/button/Button";
 import Data from "../constants/Data";
 import {useHistory} from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare, faTrashCan, faHeart } from '@fortawesome/free-regular-svg-icons';
 
     const Container = styled.div`
     display:flex;
@@ -44,6 +46,8 @@ const Blogpage = ({array, setArray}) => {
     const history = useHistory();
     const content = history.location.state.content;
 
+    const [like, setLike] = useState(0);
+
     const handledelete = () => {
         let ind;
         for(let i=0;i<Data.length;i++)
@@ -66,6 +70,9 @@ const Blogpage = ({array, setArray}) => {
             content,
         })
     }
+    const hanndlelike = () => {
+        setLike(like+1);
+    }
 
   return (
     <Container>
@@ -76,8 +83,9 @@ const Blogpage = ({array, setArray}) => {
             {content.content}
         </Description>
         <Buttondiv>
-            <Button backgroundColor="rgb(85, 41, 220)" onClick={hanndleedit}>Edit Blog</Button>
-            <Button onClick={handledelete}>Delete Blog</Button>
+            <Button backgroundColor="rgb(85, 41, 220)" onClick={hanndleedit}>Edit Blog&nbsp;&nbsp;<FontAwesomeIcon icon={faPenToSquare} /></Button>
+            <Button backgroundColor="#00C897" onClick={hanndlelike}>Like Post&nbsp;&nbsp;<FontAwesomeIcon icon={faHeart}/>&nbsp;&nbsp;{like!==0?like:""}</Button>
+            <Button backgroundColor="#FD5D5D" onClick={handledelete}>Delete Blog&nbsp;&nbsp;<FontAwesomeIcon icon={faTrashCan} /></Button>
         </Buttondiv>
     </Container>
   )

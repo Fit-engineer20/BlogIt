@@ -2,8 +2,8 @@ import React from 'react'
 import styled from "styled-components";
 import Button from "../button/Button";
 import { useHistory } from "react-router-dom";
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
    
@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <Main>
         <Logo>BlogIt</Logo>
-        <Button onClick={handleclick}>New Post</Button>
+        <Button onClick={handleclick}>New Post&nbsp;&nbsp;<FontAwesomeIcon icon={faPlus} /></Button>
     </Main>
   )
 }

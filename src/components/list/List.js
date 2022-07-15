@@ -2,6 +2,8 @@ import React from 'react'
 import styled from "styled-components";
 import Button from "../button/Button";
 import {useHistory, withRouter} from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const List = ({title,content,setArray}) => {
 
@@ -34,7 +36,7 @@ const List = ({title,content,setArray}) => {
   return (
     <ListItem>
         <Title>{title}</Title>
-        <Button name={title} onClick={handle}>View</Button>
+        <Button name={title} onClick={handle}>View&nbsp;&nbsp;<FontAwesomeIcon icon={faUpRightFromSquare} /></Button>
     </ListItem>
   )
 }
